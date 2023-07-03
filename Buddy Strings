@@ -1,0 +1,10 @@
+class Solution(object):
+    def buddyStrings(self, s, goal):
+        """
+        :type s: str
+        :type goal: str
+        :rtype: bool
+        """
+        l1 = [[a,b] for a,b in zip(s,goal) if a!=b]        
+        return len(s)==len(goal) and (len(l1)==2 and l1[0][0]==l1[1][1] and l1[1][0]==l1[0][1] or (len(l1)==0 and len(set(s))<len(goal)))
+    

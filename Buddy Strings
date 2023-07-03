@@ -6,5 +6,13 @@ class Solution(object):
         :rtype: bool
         """
         l1 = [[a,b] for a,b in zip(s,goal) if a!=b]        
-        return len(s)==len(goal) and (len(l1)==2 and l1[0][0]==l1[1][1] and l1[1][0]==l1[0][1] or (len(l1)==0 and len(set(s))<len(goal)))
+        if len(s)==len(goal):
+            if len(l1)==2 and l1[0][0]==l1[1][1] and l1[1][0]==l1[0][1]:
+                return True
+                
+            elif len(l1)==0 and len(set(s))<len(goal):
+                return True
+        else:
+            return False
     
+        

@@ -1,0 +1,8 @@
+Write a solution to find all the authors that viewed at least one of their own articles.
+
+Return the result table sorted by id in ascending order.
+```
+select  DISTINCT author_id AS id from Views
+where author_id = viewer_id 
+ORDER BY author_id ASC
+```

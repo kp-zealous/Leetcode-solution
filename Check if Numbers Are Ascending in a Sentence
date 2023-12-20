@@ -1,0 +1,24 @@
+class Solution(object):
+    def areNumbersAscending(self, s):
+        """
+        :type s: str
+        :rtype: bool
+        """
+        res,res1=True,True
+        l=list(map(str,s.split()))
+        n=[]
+        for i in l:
+            if i.isdigit() :
+                    n.append(int(i))                
+        n1=sorted(n)
+        for i in range(len(n)-1):
+            for j in range(i+1,len(n)) :
+                if n[i]<n[j]:
+                    continue
+                else:
+                    res=False  
+        if n==sorted(n):
+            res1=True
+        else:
+            res1= False
+        return res and res1

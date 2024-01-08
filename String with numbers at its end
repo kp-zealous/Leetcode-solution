@@ -1,0 +1,14 @@
+class Solution:
+	def isSame(self, s):
+        for index, letter in enumerate(s.strip(), 0):
+            if letter.isdigit():
+                word = s[:index]
+                digit = s[index:]
+                break  # Break out of the loop once the first digit is encountered
+
+        #print(word, digit)
+
+        if len(word) == int(digit):
+            return 1
+        else:
+            return 0

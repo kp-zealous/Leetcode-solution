@@ -1,0 +1,15 @@
+def revarr(l):
+    s=0
+    e=len(l)-1
+    while s<=e:
+        l[s],l[e]==l[e],l[s]
+        s+=1
+        e-=1
+    return l
+a=[1,2,3,4,5,6,7]
+d=2
+b=a[-d:]
+c=a[:-d]
+b=revarr(b)
+c=revarr(c)
+print(b+c)

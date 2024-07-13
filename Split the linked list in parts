@@ -1,0 +1,29 @@
+ length = 0
+        current = head
+        while current:
+            length += 1
+            current = current.next
+
+        # Determine the size of each part and the remainder
+        part_size = length // k
+        remainder = length % k
+
+        parts = []
+        current = head
+
+        for i in range(k):
+            part_head = current
+            part_length = part_size + (1 if i < remainder else 0)
+
+            for j in range(part_length - 1):
+                if current:
+                    current = current.next
+
+            if current:
+                next_part = current.next
+                current.next = None
+                current = next_part
+
+            parts.append(part_head)
+
+        return parts
